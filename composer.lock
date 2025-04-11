@@ -4,12 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03792edee1c5bfccb08eaf4556784c9f",
-    "packages": [],
+    "content-hash": "c4c9e02500a72fdd177fd41f5e110e45",
+    "packages": [
+        {
+            "name": "eightyfourweb/waffle",
+            "version": "dev-0.0.001",
+            "dist": {
+                "type": "path",
+                "url": "/waffle",
+                "reference": "068f21fb93a1058b45d485a53ced58f49b6827a6"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Waffle\\": "src/",
+                    "WaffleTests\\": "tests/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Leslie Petrimaux"
+                }
+            ],
+            "description": "PHP Framework",
+            "transport-options": {
+                "relative": false
+            }
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "eightyfourweb/waffle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},

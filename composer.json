@@ -13,7 +13,14 @@
   "authors": [
     {"name": "Leslie Petrimaux"}
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {
-  }
+    "eightyfourweb/waffle": "@dev"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/waffle"
+    }
+  ]
 }
