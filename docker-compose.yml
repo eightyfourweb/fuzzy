@@ -1,0 +1,27 @@
+services:
+  waffle:
+    hostname: fuzzy
+    container_name: fuzzy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    ports:
+      - "80:80" # HTTP
+      - "443:443" # HTTPS
+      - "443:443/udp" # HTTP/3
+    environment:
+      - CADDY_GLOBAL_OPTIONS=debug
+      - XDEBUG_MODE=coverage
+    volumes:
+      - ./:/app
+      - fuzzy_caddy_data:/data
+      - fuzzy_caddy_config:/config
+    tty: true
+    networks:
+      waffle:
+volumes:
+  fuzzy_caddy_data:
+  fuzzy_caddy_config:
+networks:
+  waffle:
