@@ -8,12 +8,19 @@
     "packages": [
         {
             "name": "eightyfourweb/waffle",
-            "version": "dev-0.0.001",
-            "dist": {
-                "type": "path",
-                "url": "/waffle",
-                "reference": "068f21fb93a1058b45d485a53ced58f49b6827a6"
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eightyfourweb/waffle.git",
+                "reference": "71fd9aa5df718c5a281715508e6a3483c2fe4885"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eightyfourweb/waffle/zipball/71fd9aa5df718c5a281715508e6a3483c2fe4885",
+                "reference": "71fd9aa5df718c5a281715508e6a3483c2fe4885",
+                "shasum": ""
+            },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -21,6 +28,7 @@
                     "WaffleTests\\": "tests/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -30,9 +38,11 @@
                 }
             ],
             "description": "PHP Framework",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/eightyfourweb/waffle/issues",
+                "source": "https://github.com/eightyfourweb/waffle/tree/main"
+            },
+            "time": "2025-04-11T19:37:21+00:00"
         }
     ],
     "packages-dev": [],

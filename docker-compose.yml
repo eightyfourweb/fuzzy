@@ -15,7 +15,7 @@ services:
       - XDEBUG_MODE=coverage
     volumes:
       - ./:/app
-      - ../waffle:/waffle:ro
+      - ../waffle:/waffle
       - fuzzy_caddy_data:/data
       - fuzzy_caddy_config:/config
     tty: true

@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class DummyController
+use App\Service\DummyService;
+use Waffle\Attribute\Route;
+use Waffle\Core\BaseController;
+use Waffle\Core\View;
+
+#[Route(path: '/', name: 'dummy')]
+class DummyController extends BaseController
 {
-    public function index(): array
+    #[Route(path: '', name: 'index')]
+    public function index(DummyService $service): View
     {
-        return [];
+        return new View(data: $service->getResults());
     }
 }
