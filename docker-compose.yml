@@ -1,5 +1,5 @@
 services:
-  waffle:
+  fuzzy:
     hostname: fuzzy
     container_name: fuzzy
     build:
@@ -15,14 +15,14 @@ services:
       - XDEBUG_MODE=coverage
     volumes:
       - ./:/app
-      - ../waffle:/waffle
-      - fuzzy_caddy_data:/data
-      - fuzzy_caddy_config:/config
+      - ../waffle:/waffle:ro
+      - caddy_data:/data
+      - caddy_config:/config
     tty: true
     networks:
       waffle:
 volumes:
-  fuzzy_caddy_data:
-  fuzzy_caddy_config:
+  caddy_data:
+  caddy_config:
 networks:
   waffle:
