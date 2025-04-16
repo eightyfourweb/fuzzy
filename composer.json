@@ -1,7 +1,7 @@
 {
-  "name": "eightyfourweb/fuzzy",
+  "name": "eightyfour/fuzzy",
   "description": "PHP Application",
-  "version": "dev-0.0.001",
+  "version": "0.0.001",
   "type": "project",
   "license": ["proprietary"],
   "autoload": {
@@ -14,17 +14,18 @@
     {"name": "Leslie Petrimaux"}
   ],
   "minimum-stability": "dev",
-  "prefer-stable": false,
+  "prefer-stable": true,
+  "require": {
+    "eightyfour/waffle": "@dev"
+  },
   "repositories": [
     {
+      "name": "eightyfour/waffle",
       "type": "path",
-      "url": "/waffle",
+      "url": "../waffle/",
       "options": {
-        "symlink": true
+        "symlink": false
       }
     }
-  ],
-  "require": {
-    "eightyfourweb/waffle": "@dev"
-  }
+  ]
 }

@@ -4,21 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "edf6d8f1dc0f17a2dbd8392d310c8fb2",
+    "content-hash": "1cf7fdf74c25047b4d368086a30246f3",
     "packages": [
         {
-            "name": "eightyfourweb/waffle",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/eightyfourweb/waffle.git",
-                "reference": "c9f9fb69668e171672e27cd479998c37f3b998de"
-            },
+            "name": "eightyfour/waffle",
+            "version": "dev-0.0.001",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/eightyfourweb/waffle/zipball/c9f9fb69668e171672e27cd479998c37f3b998de",
-                "reference": "c9f9fb69668e171672e27cd479998c37f3b998de",
-                "shasum": ""
+                "type": "path",
+                "url": "../waffle",
+                "reference": "3e93b65a6800a1c502810a8f9979111aea0b7cc9"
             },
             "require": {
                 "php": "^8.4.5",
@@ -34,7 +28,6 @@
                 "squizlabs/php_codesniffer": "^3.12",
                 "vimeo/psalm": "^6.9"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -42,7 +35,62 @@
                     "WaffleTests\\": "tests/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "linter": [
+                    "vendor/bin/phplint --configuration=phplint.yml"
+                ],
+                "phpstan": [
+                    "vendor/bin/phpstan analyse -c phpstan.neon -vv"
+                ],
+                "phpcs": [
+                    "vendor/bin/phpcs -p -s"
+                ],
+                "phpcsfixer": [
+                    "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --path-mode=intersection --config=php-cs-fixer.config.php"
+                ],
+                "phpcbfapp": [
+                    "vendor/bin/phpcbf app"
+                ],
+                "phpcbfsrc": [
+                    "vendor/bin/phpcbf src"
+                ],
+                "phpcbftests": [
+                    "vendor/bin/phpcbf --ignore=tests/bootstrap.php tests"
+                ],
+                "psalm": [
+                    "vendor/bin/psalm --config=psalm.xml"
+                ],
+                "phpunit": [
+                    "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage"
+                ],
+                "benchmark": [
+                    "Composer\\Config::disableProcessTimeout",
+                    "vendor/bin/phpbench run --report=default_report --output=waffle_html --retry-threshold=10"
+                ],
+                "phpcbf": [
+                    "@phpcbfapp",
+                    "@phpcbfsrc",
+                    "@phpcbftests"
+                ],
+                "fixers": [
+                    "@phpcsfixer",
+                    "@phpcbf"
+                ],
+                "analysis": [
+                    "@linter",
+                    "@phpstan",
+                    "@phpcs"
+                ],
+                "tests": [
+                    "@phpunit"
+                ],
+                "gha": [
+                    "@fixers",
+                    "@analysis",
+                    "@tests",
+                    "@benchmark"
+                ]
+            },
             "license": [
                 "proprietary"
             ],
@@ -52,15 +100,14 @@
                 }
             ],
             "description": "Base PHP Framework",
-            "support": {
-                "issues": "https://github.com/eightyfourweb/waffle/issues",
-                "source": "https://github.com/eightyfourweb/waffle/tree/main"
-            },
-            "time": "2025-04-12T02:33:47+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "symfony/dotenv",
-            "version": "7.3.x-dev",
+            "version": "v7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
@@ -137,9 +184,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "eightyfourweb/waffle": 20
+        "eightyfour/waffle": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
