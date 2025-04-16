@@ -1,0 +1,194 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1cf7fdf74c25047b4d368086a30246f3",
+    "packages": [
+        {
+            "name": "eightyfour/waffle",
+            "version": "dev-0.0.001",
+            "dist": {
+                "type": "path",
+                "url": "../waffle",
+                "reference": "3e93b65a6800a1c502810a8f9979111aea0b7cc9"
+            },
+            "require": {
+                "php": "^8.4.5",
+                "symfony/dotenv": "^7.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.75",
+                "overtrue/phplint": "^9.1",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^12.0",
+                "squizlabs/php_codesniffer": "^3.12",
+                "vimeo/psalm": "^6.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Waffle\\": "src/",
+                    "WaffleTests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "linter": [
+                    "vendor/bin/phplint --configuration=phplint.yml"
+                ],
+                "phpstan": [
+                    "vendor/bin/phpstan analyse -c phpstan.neon -vv"
+                ],
+                "phpcs": [
+                    "vendor/bin/phpcs -p -s"
+                ],
+                "phpcsfixer": [
+                    "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --path-mode=intersection --config=php-cs-fixer.config.php"
+                ],
+                "phpcbfapp": [
+                    "vendor/bin/phpcbf app"
+                ],
+                "phpcbfsrc": [
+                    "vendor/bin/phpcbf src"
+                ],
+                "phpcbftests": [
+                    "vendor/bin/phpcbf --ignore=tests/bootstrap.php tests"
+                ],
+                "psalm": [
+                    "vendor/bin/psalm --config=psalm.xml"
+                ],
+                "phpunit": [
+                    "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage"
+                ],
+                "benchmark": [
+                    "Composer\\Config::disableProcessTimeout",
+                    "vendor/bin/phpbench run --report=default_report --output=waffle_html --retry-threshold=10"
+                ],
+                "phpcbf": [
+                    "@phpcbfapp",
+                    "@phpcbfsrc",
+                    "@phpcbftests"
+                ],
+                "fixers": [
+                    "@phpcsfixer",
+                    "@phpcbf"
+                ],
+                "analysis": [
+                    "@linter",
+                    "@phpstan",
+                    "@phpcs"
+                ],
+                "tests": [
+                    "@phpunit"
+                ],
+                "gha": [
+                    "@fixers",
+                    "@analysis",
+                    "@tests",
+                    "@benchmark"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Leslie Petrimaux"
+                }
+            ],
+            "description": "Base PHP Framework",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "symfony/dotenv",
+            "version": "v7.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "28347a897771d0c28e99b75166dd2689099f3045"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/28347a897771d0c28e99b75166dd2689099f3045",
+                "reference": "28347a897771d0c28e99b75166dd2689099f3045",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "conflict": {
+                "symfony/console": "<6.4",
+                "symfony/process": "<6.4"
+            },
+            "require-dev": {
+                "symfony/console": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/v7.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-11-27T11:18:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "eightyfour/waffle": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

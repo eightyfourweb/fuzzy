@@ -1,5 +1,5 @@
 {
-  "name": "eightyfourweb/fuzzy",
+  "name": "eightyfour/fuzzy",
   "description": "PHP Application",
   "version": "0.0.001",
   "type": "project",
@@ -13,15 +13,19 @@
   "authors": [
     {"name": "Leslie Petrimaux"}
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "eightyfourweb/waffle": "@dev"
+    "eightyfour/waffle": "@dev"
   },
   "repositories": [
     {
+      "name": "eightyfour/waffle",
       "type": "path",
-      "url": "/waffle"
+      "url": "../waffle/",
+      "options": {
+        "symlink": false
+      }
     }
   ]
 }
