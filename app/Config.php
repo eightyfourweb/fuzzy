@@ -7,8 +7,8 @@ namespace App;
 use Waffle\Attribute\Configuration;
 
 #[Configuration(
-    controller: 'src/Controller',
-    service: 'src/Service',
+    controller: 'app/Controller',
+    service: 'app/Service',
     securityLevel: 10,
 )]
 class Config extends Configuration

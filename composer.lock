@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cf7fdf74c25047b4d368086a30246f3",
+    "content-hash": "0bbb14fec3d1131240421d8772c1618d",
     "packages": [
         {
             "name": "eightyfour/waffle",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../waffle",
-                "reference": "3e93b65a6800a1c502810a8f9979111aea0b7cc9"
+                "reference": "2d1e4c86d43fea9e820eba007cbbe84fc8884102"
             },
             "require": {
                 "php": "^8.4.5",
@@ -101,7 +101,7 @@
             ],
             "description": "Base PHP Framework",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
