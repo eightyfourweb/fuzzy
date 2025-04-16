@@ -22,7 +22,7 @@
     {
       "name": "eightyfour/waffle",
       "type": "path",
-      "url": "../waffle/",
+      "url": "/waffle/",
       "options": {
         "symlink": true
       }

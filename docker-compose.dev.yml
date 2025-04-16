@@ -1,0 +1,7 @@
+services:
+  fuzzy:
+    environment:
+      - CADDY_GLOBAL_OPTIONS=debug
+      - XDEBUG_MODE=coverage
+    volumes:
+      - ../waffle:/waffle

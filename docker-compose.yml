@@ -10,12 +10,8 @@ services:
       - "80:80" # HTTP
       - "443:443" # HTTPS
       - "443:443/udp" # HTTP/3
-    environment:
-      - CADDY_GLOBAL_OPTIONS=debug
-      - XDEBUG_MODE=coverage
     volumes:
       - ./:/app
-      - ../waffle:/waffle:ro
       - caddy_data:/data
       - caddy_config:/config
     tty: true

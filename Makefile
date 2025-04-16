@@ -1,8 +1,12 @@
 .DEFAULT_GOAL := help
 
+.PHONY: docker
+docker: ## Create docker image and a standalone container
+	COMPOSE_BAKE=true docker compose -f docker-compose.yml up --build -d
+
 .PHONY: dev
 dev: ## Create docker image and a standalone container for dev environment
-	COMPOSE_BAKE=true docker compose -f docker-compose.yml up --build -d
+	COMPOSE_BAKE=true docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d
 
 .PHONY: clean
 clean: ## Safely remove docker container
