@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4394e6057b54bada05bbb5b564c6d2bb",
+    "content-hash": "8ec952ca3b7d5edbbc3bef5cb8d4d0a8",
     "packages": [
         {
             "name": "eightyfour/waffle",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "/waffle",
-                "reference": "a900da132fb6e29bb23c4cf3d140cf0ae87e9d89"
+                "reference": "908719ca7b5e82f0ad623083dc9df1a9e8de29b8"
             },
             "require": {
                 "php": "^8.4.5",
@@ -48,9 +48,6 @@
                 "phpcsfixer": [
                     "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --path-mode=intersection --config=php-cs-fixer.config.php"
                 ],
-                "phpcbfapp": [
-                    "vendor/bin/phpcbf app"
-                ],
                 "phpcbfsrc": [
                     "vendor/bin/phpcbf src"
                 ],
@@ -68,7 +65,6 @@
                     "vendor/bin/phpbench run --report=default_report --output=waffle_html --retry-threshold=10"
                 ],
                 "phpcbf": [
-                    "@phpcbfapp",
                     "@phpcbfsrc",
                     "@phpcbftests"
                 ],
@@ -182,7 +178,7 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "eightyfour/waffle": 20
     },

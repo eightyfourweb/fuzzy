@@ -12,7 +12,8 @@ RUN install-php-extensions \
 	intl \
 	zip \
 	opcache \
-    xdebug;
+    xdebug; \
+    apt install bash;
 
 RUN cp $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 
