@@ -1,7 +1,7 @@
 {
   "name": "eightyfour/fuzzy",
   "description": "PHP Application",
-  "version": "0.0.001",
+  "version": "0.1.0",
   "type": "project",
   "license": ["proprietary"],
   "autoload": {
